@@ -4,7 +4,7 @@
 #
 Name     : tempora
 Version  : 1.11
-Release  : 2
+Release  : 3
 URL      : https://files.pythonhosted.org/packages/12/6b/dc2e9370bf3be766302dbd6cd9729e258e875d31a7a21c9f760aaa5b5b5e/tempora-1.11.tar.gz
 Source0  : https://files.pythonhosted.org/packages/12/6b/dc2e9370bf3be766302dbd6cd9729e258e875d31a7a21c9f760aaa5b5b5e/tempora-1.11.tar.gz
 Summary  : Objects and routines pertaining to date and time (tempora)
@@ -13,8 +13,6 @@ License  : MIT
 Requires: tempora-bin
 Requires: tempora-python3
 Requires: tempora-python
-Requires: Sphinx
-Requires: pytest
 Requires: pytz
 Requires: six
 BuildRequires : pbr
@@ -68,7 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1525905877
+export SOURCE_DATE_EPOCH=1528566396
 python3 setup.py build -b py3
 
 %install
