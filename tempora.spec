@@ -4,7 +4,7 @@
 #
 Name     : tempora
 Version  : 1.11
-Release  : 5
+Release  : 6
 URL      : https://files.pythonhosted.org/packages/12/6b/dc2e9370bf3be766302dbd6cd9729e258e875d31a7a21c9f760aaa5b5b5e/tempora-1.11.tar.gz
 Source0  : https://files.pythonhosted.org/packages/12/6b/dc2e9370bf3be766302dbd6cd9729e258e875d31a7a21c9f760aaa5b5b5e/tempora-1.11.tar.gz
 Summary  : Objects and routines pertaining to date and time (tempora)
