@@ -4,7 +4,7 @@
 #
 Name     : tempora
 Version  : 1.13
-Release  : 10
+Release  : 11
 URL      : https://files.pythonhosted.org/packages/27/67/f2a19a71e9bc2d460d75a6745f8de868ccdf99e6a56e5ad8e89e22d80b0d/tempora-1.13.tar.gz
 Source0  : https://files.pythonhosted.org/packages/27/67/f2a19a71e9bc2d460d75a6745f8de868ccdf99e6a56e5ad8e89e22d80b0d/tempora-1.13.tar.gz
 Summary  : Objects and routines pertaining to date and time (tempora)
@@ -14,9 +14,11 @@ Requires: tempora-bin
 Requires: tempora-python3
 Requires: tempora-license
 Requires: tempora-python
+Requires: jaraco.functools
 Requires: pytz
 Requires: six
 BuildRequires : buildreq-distutils3
+BuildRequires : jaraco.functools
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : pluggy
@@ -75,7 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532272130
+export SOURCE_DATE_EPOCH=1532293617
 python3 setup.py build -b py3
 
 %install
