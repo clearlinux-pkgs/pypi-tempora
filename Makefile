@@ -1,5 +1,5 @@
 PKG_NAME := tempora
-URL = https://files.pythonhosted.org/packages/51/ff/0c5d907c38160a6eff9477b411f1b6e7ae9f16d86ba508fd7d1971724180/tempora-2.0.0.tar.gz
+URL = https://files.pythonhosted.org/packages/f7/6c/0220713d15e60a607bc72c3025e073308fced307f678c6eeec820ad26b46/tempora-2.1.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
