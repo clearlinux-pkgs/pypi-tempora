@@ -4,7 +4,7 @@
 #
 Name     : tempora
 Version  : 2.1.0
-Release  : 20
+Release  : 21
 URL      : https://files.pythonhosted.org/packages/f7/6c/0220713d15e60a607bc72c3025e073308fced307f678c6eeec820ad26b46/tempora-2.1.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/f7/6c/0220713d15e60a607bc72c3025e073308fced307f678c6eeec820ad26b46/tempora-2.1.0.tar.gz
 Summary  : Objects and routines pertaining to date and time (tempora)
@@ -28,7 +28,36 @@ BuildRequires : virtualenv
 
 %description
 .. image:: https://img.shields.io/pypi/v/tempora.svg
-:target: https://pypi.org/project/tempora
+   :target: https://pypi.org/project/tempora
+
+.. image:: https://img.shields.io/pypi/pyversions/tempora.svg
+
+.. image:: https://dev.azure.com/jaraco/tempora/_apis/build/status/jaraco.tempora?branchName=master
+   :target: https://dev.azure.com/jaraco/tempora/_build/latest?definitionId=1&branchName=master
+
+.. image:: https://img.shields.io/travis/jaraco/tempora/master.svg
+   :target: https://travis-ci.org/jaraco/tempora
+
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+   :target: https://github.com/psf/black
+   :alt: Code style: Black
+
+.. .. image:: https://img.shields.io/appveyor/ci/jaraco/tempora/master.svg
+..    :target: https://ci.appveyor.com/project/jaraco/tempora/branch/master
+
+.. image:: https://readthedocs.org/projects/tempora/badge/?version=latest
+   :target: https://tempora.readthedocs.io/en/latest/?badge=latest
+
+Objects and routines pertaining to date and time (tempora).
+
+Modules include:
+
+- tempora (top level package module) contains miscellaneous
+   utilities and constants.
+- timing contains routines for measuring and profiling.
+- schedule contains an event scheduler.
+- utc contains routines for getting datetime-aware UTC values
+  (Python 3 only).
 
 %package bin
 Summary: bin components for the tempora package.
@@ -60,6 +89,7 @@ python components for the tempora package.
 Summary: python3 components for the tempora package.
 Group: Default
 Requires: python3-core
+Provides: pypi(tempora)
 
 %description python3
 python3 components for the tempora package.
@@ -74,7 +104,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578698355
+export SOURCE_DATE_EPOCH=1582912879
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
