@@ -4,7 +4,7 @@
 #
 Name     : tempora
 Version  : 3.0.0
-Release  : 22
+Release  : 23
 URL      : https://files.pythonhosted.org/packages/9d/16/4259ab049ad62e6ae71164cb6d99dbfb59ab3bbcdd5ce08ae05283e008fb/tempora-3.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/9d/16/4259ab049ad62e6ae71164cb6d99dbfb59ab3bbcdd5ce08ae05283e008fb/tempora-3.0.0.tar.gz
 Summary  : Objects and routines pertaining to date and time (tempora)
