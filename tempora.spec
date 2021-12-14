@@ -4,7 +4,7 @@
 #
 Name     : tempora
 Version  : 4.1.2
-Release  : 40
+Release  : 41
 URL      : https://files.pythonhosted.org/packages/86/4e/9af10e9b896c70ac6e817ac317107f96efbe0b435c4918edd5bf6fcaa330/tempora-4.1.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/86/4e/9af10e9b896c70ac6e817ac317107f96efbe0b435c4918edd5bf6fcaa330/tempora-4.1.2.tar.gz
 Summary  : Objects and routines pertaining to date and time (tempora)
