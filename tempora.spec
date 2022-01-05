@@ -4,7 +4,7 @@
 #
 Name     : tempora
 Version  : 4.1.2
-Release  : 41
+Release  : 42
 URL      : https://files.pythonhosted.org/packages/86/4e/9af10e9b896c70ac6e817ac317107f96efbe0b435c4918edd5bf6fcaa330/tempora-4.1.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/86/4e/9af10e9b896c70ac6e817ac317107f96efbe0b435c4918edd5bf6fcaa330/tempora-4.1.2.tar.gz
 Summary  : Objects and routines pertaining to date and time (tempora)
@@ -15,16 +15,19 @@ Requires: tempora-license = %{version}-%{release}
 Requires: tempora-python = %{version}-%{release}
 Requires: tempora-python3 = %{version}-%{release}
 Requires: jaraco.functools
-Requires: pytz
 BuildRequires : buildreq-distutils3
 BuildRequires : jaraco.functools
-BuildRequires : pluggy
-BuildRequires : py-python
-BuildRequires : pytest
-BuildRequires : pytz
+BuildRequires : pypi(jaraco.functools)
+BuildRequires : pypi(pluggy)
+BuildRequires : pypi(py)
+BuildRequires : pypi(pytest)
+BuildRequires : pypi(pytz)
+BuildRequires : pypi(setuptools)
+BuildRequires : pypi(setuptools_scm)
+BuildRequires : pypi(tox)
+BuildRequires : pypi(virtualenv)
+BuildRequires : pypi(wheel)
 BuildRequires : setuptools_scm
-BuildRequires : tox
-BuildRequires : virtualenv
 
 %description
 .. image:: https://img.shields.io/pypi/v/tempora.svg
@@ -79,21 +82,21 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1633723627
+export SOURCE_DATE_EPOCH=1641424607
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
 export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
-python3 setup.py build
+python3 -m build --wheel --skip-dependency-check --no-isolation
 
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/tempora
 cp %{_builddir}/tempora-4.1.2/LICENSE %{buildroot}/usr/share/package-licenses/tempora/8e6689d37f82d5617b7f7f7232c94024d41066d1
-python3 -tt setup.py build  install --root=%{buildroot}
+pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
