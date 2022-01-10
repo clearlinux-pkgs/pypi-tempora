@@ -4,7 +4,7 @@
 #
 Name     : pypi-tempora
 Version  : 4.1.2
-Release  : 43
+Release  : 44
 URL      : https://files.pythonhosted.org/packages/86/4e/9af10e9b896c70ac6e817ac317107f96efbe0b435c4918edd5bf6fcaa330/tempora-4.1.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/86/4e/9af10e9b896c70ac6e817ac317107f96efbe0b435c4918edd5bf6fcaa330/tempora-4.1.2.tar.gz
 Summary  : Objects and routines pertaining to date and time (tempora)
@@ -14,7 +14,7 @@ Requires: pypi-tempora-bin = %{version}-%{release}
 Requires: pypi-tempora-license = %{version}-%{release}
 Requires: pypi-tempora-python = %{version}-%{release}
 Requires: pypi-tempora-python3 = %{version}-%{release}
-Requires: jaraco.functools
+Requires: pypi(jaraco.functools)
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(jaraco.functools)
 BuildRequires : pypi(py)
@@ -80,7 +80,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641588725
+export SOURCE_DATE_EPOCH=1641840951
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
