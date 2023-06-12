@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-tempora
-Version  : 5.2.2
-Release  : 59
-URL      : https://files.pythonhosted.org/packages/1c/32/963e37d9ad64582b822b8bf3288ac135ede936e5c8fe1c71da74164f0974/tempora-5.2.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/1c/32/963e37d9ad64582b822b8bf3288ac135ede936e5c8fe1c71da74164f0974/tempora-5.2.2.tar.gz
+Version  : 5.3.0
+Release  : 60
+URL      : https://files.pythonhosted.org/packages/24/9e/fe5328123e2d416b39c5e790165074123c54e34e82aecca33473711dd439/tempora-5.3.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/24/9e/fe5328123e2d416b39c5e790165074123c54e34e82aecca33473711dd439/tempora-5.3.0.tar.gz
 Summary  : Objects and routines pertaining to date and time (tempora)
 Group    : Development/Tools
 License  : MIT
@@ -18,6 +18,8 @@ Requires: pypi-tempora-python3 = %{version}-%{release}
 Requires: pypi(jaraco.functools)
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(py)
+BuildRequires : pypi(setuptools)
+BuildRequires : pypi(setuptools_scm)
 BuildRequires : pypi-pluggy
 BuildRequires : pypi-pytest
 BuildRequires : pypi-tox
@@ -69,10 +71,10 @@ python3 components for the pypi-tempora package.
 
 
 %prep
-%setup -q -n tempora-5.2.2
-cd %{_builddir}/tempora-5.2.2
+%setup -q -n tempora-5.3.0
+cd %{_builddir}/tempora-5.3.0
 pushd ..
-cp -a tempora-5.2.2 buildavx2
+cp -a tempora-5.3.0 buildavx2
 popd
 
 %build
@@ -80,12 +82,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681145643
+export SOURCE_DATE_EPOCH=1686585592
 export GCC_IGNORE_WERROR=1
-export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
@@ -102,7 +104,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-tempora
-cp %{_builddir}/tempora-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-tempora/8e6689d37f82d5617b7f7f7232c94024d41066d1 || :
+cp %{_builddir}/tempora-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-tempora/0445ed0f69910eeaee036f09a39a13c6e1f37e12 || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -126,7 +128,7 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/pypi-tempora/8e6689d37f82d5617b7f7f7232c94024d41066d1
+/usr/share/package-licenses/pypi-tempora/0445ed0f69910eeaee036f09a39a13c6e1f37e12
 
 %files python
 %defattr(-,root,root,-)
