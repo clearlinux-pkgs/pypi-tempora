@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-tempora
-Version  : 5.3.0
-Release  : 60
-URL      : https://files.pythonhosted.org/packages/24/9e/fe5328123e2d416b39c5e790165074123c54e34e82aecca33473711dd439/tempora-5.3.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/24/9e/fe5328123e2d416b39c5e790165074123c54e34e82aecca33473711dd439/tempora-5.3.0.tar.gz
+Version  : 5.5.0
+Release  : 61
+URL      : https://files.pythonhosted.org/packages/c9/dc/97d90b9f64dbe4f599023e19602b33a2cced68462db67a3d4805a77cf784/tempora-5.5.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/c9/dc/97d90b9f64dbe4f599023e19602b33a2cced68462db67a3d4805a77cf784/tempora-5.5.0.tar.gz
 Summary  : Objects and routines pertaining to date and time (tempora)
 Group    : Development/Tools
 License  : MIT
@@ -71,10 +71,10 @@ python3 components for the pypi-tempora package.
 
 
 %prep
-%setup -q -n tempora-5.3.0
-cd %{_builddir}/tempora-5.3.0
+%setup -q -n tempora-5.5.0
+cd %{_builddir}/tempora-5.5.0
 pushd ..
-cp -a tempora-5.3.0 buildavx2
+cp -a tempora-5.5.0 buildavx2
 popd
 
 %build
@@ -82,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1686585592
+export SOURCE_DATE_EPOCH=1687887889
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
