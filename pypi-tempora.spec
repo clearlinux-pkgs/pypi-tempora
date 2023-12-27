@@ -5,7 +5,7 @@
 #
 Name     : pypi-tempora
 Version  : 5.5.0
-Release  : 62
+Release  : 63
 URL      : https://files.pythonhosted.org/packages/c9/dc/97d90b9f64dbe4f599023e19602b33a2cced68462db67a3d4805a77cf784/tempora-5.5.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/c9/dc/97d90b9f64dbe4f599023e19602b33a2cced68462db67a3d4805a77cf784/tempora-5.5.0.tar.gz
 Summary  : Objects and routines pertaining to date and time (tempora)
